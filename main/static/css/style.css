@@ -3,6 +3,26 @@ body, html {
     padding: 0;
     height: 100%;
 }
+.toolbar{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Example color */
+    color: white;
+    padding: 10px 0;
+    transition: top 0.3s;
+}
+.toolbar .icon-link {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    font-size: 40px; /* Icon size */
+}
+
+.toolbar .icon-link:hover {
+    color: #007bff; /* Icon hover color */
+}
 .section{
     display: flex;
     align-items: center; /* Vertically center the items in the container */
@@ -15,8 +35,8 @@ body, html {
 }
 
 .head1{
-    font-family: "Arial", sans-serif;
-    font-size: 25px;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 100px;
     color: whitesmoke; 
     margin-right: 20px;
 }
@@ -34,8 +54,8 @@ body, html {
 .reverse .head2 {
     margin-right: 0;
     margin-left: 20px; /* Adjust spacing when the heading is on the right */
-    font-family: "Arial", sans-serif;
-    font-size: 25px;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 100px;
     color: black; 
 }
 .reverse .p2 {
