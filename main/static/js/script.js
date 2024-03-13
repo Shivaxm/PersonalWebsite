@@ -1,17 +1,20 @@
-// JavaScript to make the navbar hide on scroll down and show on scroll up
-let lastScrollTop = 0; // This variable will hold the last scroll position
-const navbar = document.querySelector('.navbar'); // Select the navbar
 
-window.addEventListener('scroll', function() {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
-  if (currentScroll > lastScrollTop) {
-    // Scrolling down
-    navbar.style.top = '-60px'; // Adjust this value based on the navbar's height
-  } else {
-    // Scrolling up
-    navbar.style.top = '0';
-  }
-  
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-}, false);
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Script is running");
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, {
+        threshold: 0.8,
+        rootMargin: "0px 0px -100px 0px" 
+    });
+
+    
+    document.querySelectorAll('.head1, .head2, .p1, .p2').forEach(el => {
+        observer.observe(el);
+    });
+});
